@@ -81,6 +81,7 @@ bool	check_path_folder(t_cmd *c_list)
 	char		**paths;
 	char		**tmp_paths;
 
+	tmp_paths = 0;
 	path_value = get_env_value("PATH");
 	if (path_value)
 	{
