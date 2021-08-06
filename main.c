@@ -55,6 +55,23 @@ void	init_setting(char **envp)
 	init_term2();
 }
 
+void	free_env_list(t_env *tmp)
+{
+	t_env	*tmp2;
+
+	tmp2 = tmp;
+	while (tmp)
+	{
+		tmp2 = tmp->next;
+		if (tmp->key)
+			free(tmp->key);
+		if (tmp->value)
+			free(tmp->value);
+		free(tmp);
+		tmp = tmp2;
+	}
+}
+
 int	main(int argc, char **argv, char **envp)
 {
 	(void)argc;
@@ -75,8 +92,12 @@ int	main(int argc, char **argv, char **envp)
 			if (g_data->ret != 2)
 				return (0);
 		}
-		free_buffer(&g_data->input);
+		break ;
 	}
+	free_buffer(&g_data->input);
+	free_env_list(g_data->env_list);
+	free(g_data);
+	system("leaks minishell");
 	return (0);
 }
 
