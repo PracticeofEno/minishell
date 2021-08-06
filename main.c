@@ -93,11 +93,8 @@ int	main(int argc, char **argv, char **envp)
 				return (0);
 		}
 		free_buffer(&g_data->input);
-		break ;
+		//system("leaks minishell");
 	}
-	free_env_list(g_data->env_list);
-	free(g_data);
-	system("leaks minishell");
 	return (0);
 }
 
