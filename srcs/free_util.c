@@ -83,6 +83,7 @@ void	free_cmd(t_cmd	*cmd)
 			free(cmd->origin);
 		if (cmd->cmd)
 			free_list(cmd->cmd);
+		free(cmd);
 		cmd = tmp;
 	}
 }
