@@ -37,10 +37,7 @@ char	*get_env(char **commands)
 	tmp[i] = 0;
 	*commands = tmp2;
 	if (get_env_value(tmp) == 0)
-	{
 		return (0);
-			
-	}
 	return (get_env_value(tmp));
 }
 

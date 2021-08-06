@@ -78,26 +78,28 @@ static	char	*create_arr(char *str, char sep, int *ip)
 		if (is_sep(str[i], sep))
 			break ;
 		arr[i] = str[i];
-		i++;
+		if (str[i] != 0x00)
+			i++;
 	}
 	*ip = i;
 	arr[i] = 0x00;
 	return (arr);
 }
 
-char	**ft_split2(char *str, char charset)
+char	**ft_split2(char *str, char charset, int index)
 {
 	int		size_count;
 	char	*r_arr;
-	int		index;
 	char	**p_arr;
 
 	size_count = count_array(str, charset);
-	index = 0;
 	p_arr = (char **)malloc((size_count + 1) * sizeof(char *));
 	p_arr[size_count] = (void *)0;
 	if (size_count == 1)
+	{
 		p_arr[0] = ft_strdup(str);
+		return (p_arr);
+	}
 	while (*str)
 	{
 		if (*str == '"' || *str == '\'')

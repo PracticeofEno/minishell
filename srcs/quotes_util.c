@@ -61,7 +61,6 @@ void	convert_double_quotes(char **start, char **commands)
 	char	*env_value;
 	int		i;
 
-	//fck_norm(&tmp, commands, &i);
 	tmp = *commands;
 	tmp = tmp + 1;
 	i = 0;
@@ -83,7 +82,6 @@ void	convert_double_quotes(char **start, char **commands)
 		}
 	}
 	*commands = (++tmp);
-	return ;
 }
 
 void	convert_one_quotes(char **start, char **commands)
@@ -122,16 +120,13 @@ int	count_env(char **commands)
 	tmp2++;
 	while (i < size)
 	{
-		tmp[i] = *tmp2;
-		tmp2++;
+		tmp[i] = *tmp2++;
 		i++;
 	}
 	tmp[i] = 0;
 	*commands = tmp2;
 	if (get_env_value(tmp) == 0)
-	{
 		return (0);
-	}
 	else
 		return (ft_strlen(get_env_value(tmp)));
 }

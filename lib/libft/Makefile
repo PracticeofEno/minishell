@@ -13,6 +13,7 @@
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
+#CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 
 FILES = ft_strlen.c \
 		ft_atoi.c \

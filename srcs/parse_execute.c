@@ -52,7 +52,7 @@ void	parse_execute(char *command)
 	t_cmd	*c_backup;
 
 	c_list = 0;
-	tmp_command = ft_split2(command, '|');
+	tmp_command = ft_split2(command, '|', 0);
 	back_up = tmp_command;
 	while (*tmp_command)
 	{

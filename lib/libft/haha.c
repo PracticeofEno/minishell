@@ -45,7 +45,8 @@ void	haha(char *str, int *i, char sep)
 			jumpaa4(str, str[*i], i);
 		if (is_sep(str[*i], sep))
 			break ;
-		*i = *i + 1;
+		if (str[*i] != 0x00)
+			*i = *i + 1;
 	}
 }
 

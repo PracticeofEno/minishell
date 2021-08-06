@@ -67,7 +67,7 @@ char			*ft_trim(char *str, char c);
 void			free_buffer(char **sbuffer);
 int				get_next_line(int fd, char **line);
 void			ft_replace(char **str, char *src, char *dest);
-char			**ft_split2(char *str, char charset);
+char			**ft_split2(char *str, char charset, int index);
 void			haha(char *str, int *i, char sep);
 void			jumpaa2(char **start, char c, int i);
 void			jumpaa3(char *start, char c, int *i, char **arr);

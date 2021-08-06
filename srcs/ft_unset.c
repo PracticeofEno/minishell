@@ -38,13 +38,15 @@ void	delete_free(t_env *tmp)
 void	delete_env(t_env *env_list, char *argv)
 {
 	t_env	*tmp;
+	t_env	*tmp2;
 
 	tmp = env_list;
 	while (tmp)
 	{
+		tmp2 = tmp->next;
 		if (is_same(tmp->key, argv))
 			delete_free(tmp);
-		tmp = tmp->next;
+		tmp = tmp2;
 	}
 }
 
