@@ -81,8 +81,8 @@ t_env	*parse_env(char **envp)
 	{
 		tmp = (t_env *)malloc(sizeof(t_env));
 		splits = ft_split(*envp, '=');
-		tmp->key = splits[0];
-		tmp->value = splits[1];
+		tmp->key = ft_strdup(splits[0]);
+		tmp->value = ft_strdup(splits[1]);
 		tmp->prev = 0;
 		tmp->next = 0;
 		env_add_back(&env_list, tmp);
