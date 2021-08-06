@@ -79,11 +79,13 @@ bool	check_path_folder(t_cmd *c_list)
 	char		buf[5000];
 	char		*path_value;
 	char		**paths;
+	char		**tmp_paths;
 
 	path_value = get_env_value("PATH");
 	if (path_value)
 	{
 		paths = ft_split(path_value, ':');
+		tmp_paths = paths;
 		while (*paths)
 		{
 			norm(&i, paths, buf, c_list);
@@ -95,5 +97,6 @@ bool	check_path_folder(t_cmd *c_list)
 			paths++;
 		}
 	}
+	free_split(tmp_paths);
 	return (false);
 }
