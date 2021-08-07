@@ -99,6 +99,6 @@ bool	check_path_folder(t_cmd *c_list)
 			paths++;
 		}
 	}
-	free(tmp_paths);
+	free_split(tmp_paths);
 	return (false);
 }
