@@ -19,6 +19,7 @@ char	*get_input(void)
 	{
 		if (check_parse_error(g_data->input) == -1)
 		{
+			free_buffer(&g_data->input);
 			g_data->ret = 2;
 			return (0);
 		}
