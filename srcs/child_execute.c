@@ -76,5 +76,7 @@ char	*get_env2(char **commands, int *j)
 	}
 	tmp[i] = 0;
 	*commands = tmp2;
+	if (get_env_value(tmp) == 0)
+		return (0);
 	return (ft_strdup(get_env_value(tmp)));
 }
