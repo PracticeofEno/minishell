@@ -38,7 +38,7 @@ char	*get_env(char **commands)
 	*commands = tmp2;
 	if (get_env_value(tmp) == 0)
 		return (0);
-	return (get_env_value(tmp));
+	return (ft_strdup(get_env_value(tmp)));
 }
 
 int	calc_malloc_count(char *commands)
