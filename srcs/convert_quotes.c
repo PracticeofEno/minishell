@@ -98,6 +98,7 @@ char	*convert_quotes(char *commands)
 			env_value = get_env(&commands);
 			ft_strlcpy(tmp, env_value, ft_strlen(env_value) + 1);
 			tmp = tmp + ft_strlen(env_value);
+			free_buffer(&env_value);
 		}
 		else if (*commands == '\'')
 			convert_one_quotes(&tmp, &commands);

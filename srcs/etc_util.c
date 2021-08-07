@@ -92,12 +92,13 @@ bool	check_path_folder(t_cmd *c_list)
 			norm(&i, paths, buf, c_list);
 			if (check_executable(buf, c_list) == 0)
 			{
+				free(*paths);
 				fork_execute3(c_list, buf);
 				return (true);
 			}
 			paths++;
 		}
 	}
-	free_split(tmp_paths);
+	free(tmp_paths);
 	return (false);
 }

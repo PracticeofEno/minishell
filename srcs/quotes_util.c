@@ -73,6 +73,7 @@ void	convert_double_quotes(char **start, char **commands)
 			env_value = get_env2(&tmp, &i);
 			ft_strlcpy(*start, env_value, ft_strlen(env_value) + 1);
 			*start = *start + ft_strlen(env_value);
+			free_buffer(&env_value);
 		}
 		else
 		{
