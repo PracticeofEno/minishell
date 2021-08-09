@@ -60,12 +60,12 @@ int	execute_etc(t_cmd *c_list, char *buf)
 	{
 		waitpid(pid, &status, 0);
 		if (WIFEXITED(status))
-			g_data->ret = WEXITSTATUS(status);
+			g_data->status = WEXITSTATUS(status);
 		close(c_list->fds[1]);
 		tcsetattr(STDIN_FILENO, TCSANOW, &g_data->main_term);
-		return (g_data->ret);
+		return (g_data->status);
 	}
-	return (g_data->ret);
+	return (g_data->status);
 }
 
 int	check_executable(char *buf, t_cmd *c_list)
@@ -77,12 +77,12 @@ int	check_executable(char *buf, t_cmd *c_list)
 	i = stat(buf, &sb);
 	if (i != 0)
 	{
-		g_data->ret = 127;
+		g_data->status = 127;
 		return (1);
 	}
 	else if (S_ISDIR(sb.st_mode))
 	{
-		g_data->ret = 126;
+		g_data->status = 126;
 		return (2);
 	}
 	else
@@ -91,7 +91,7 @@ int	check_executable(char *buf, t_cmd *c_list)
 			return (0);
 		else
 		{
-			g_data->ret = 999;
+			g_data->status = 999;
 			return (3);
 		}
 	}

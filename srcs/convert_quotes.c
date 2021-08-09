@@ -22,7 +22,7 @@ char	*get_env(char **commands)
 	i = 0;
 	tmp2 = *commands;
 	size = get_env_len(*commands);
-	if (size == 1 && *(tmp2) == '$')
+	if (size == 0 &&  my_strcmp(tmp2, "$") == 0)
 	{
 		*commands = *commands + 1;
 		return (ft_strdup("$"));

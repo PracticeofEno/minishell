@@ -62,7 +62,7 @@ char	*get_env2(char **commands, int *j)
 	tmp2 = *commands;
 	size = get_env_len(*commands);
 	*j = size;
-	if (size == 1 && *(tmp2) == '$')
+	if (size == 0 && *tmp2 == '$')
 	{
 		*commands = *commands + 1;
 		return (ft_strdup("$"));

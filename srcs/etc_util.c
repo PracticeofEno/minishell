@@ -14,14 +14,14 @@
 
 void	print_error(t_cmd *c_list)
 {
-	if (g_data->ret == 126)
+	if (g_data->status == 126)
 		printf("%s: is a directory\n", c_list->cmd->content);
-	else if (g_data->ret == 127)
+	else if (g_data->status == 127)
 		printf("%s: command not found\n", c_list->cmd->content);
-	else if (g_data->ret == 999)
+	else if (g_data->status == 999)
 	{
 		printf("permission denined: %s\n", c_list->cmd->content);
-		g_data->ret = 126;
+		g_data->status = 126;
 	}
 }
 
@@ -98,7 +98,7 @@ bool	check_path_folder(t_cmd *c_list)
 			}
 			paths++;
 		}
+		free_split(tmp_paths);
 	}
-	free_split(tmp_paths);
 	return (false);
 }

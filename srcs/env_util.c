@@ -47,7 +47,7 @@ int	get_env_len(char *commands)
 	tmp = commands;
 	tmp++;
 	if (*tmp == ' ' || *tmp == 0)
-		return (1);
+		return (0);
 	while (*tmp)
 	{
 		if (!valid_env_name(*tmp, start_number))

@@ -55,7 +55,7 @@ void	convert_qeustion(t_list *lst)
 		tmp2 = tmp->content;
 		if (my_strcmp(tmp2, "$?") == 0)
 		{
-			tmp->content = ft_itoa(g_data->ret);
+			tmp->content = ft_itoa(g_data->status);
 			free(tmp2);
 		}
 		tmp = tmp->next;

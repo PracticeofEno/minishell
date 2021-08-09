@@ -20,7 +20,7 @@ char	*get_input(void)
 		if (check_parse_error(g_data->input) == -1)
 		{
 			free_buffer(&g_data->input);
-			g_data->ret = 2;
+			g_data->ret = 1;
 			return (0);
 		}
 		g_data->input = ft_trim(g_data->input, ' ');
@@ -94,7 +94,7 @@ int	main(int argc, char **argv, char **envp)
 				return (0);
 		}
 		free_buffer(&g_data->input);
-		system("leaks minishell");
+		//system("leaks minishell");
 	}
 	return (0);
 }
