@@ -46,7 +46,7 @@
 
 ### 원인
 쉘 커맨드를 입력하는 경우 각 명령어의  return값을 얻고자 할때 minishell 메인 프로세스가 return값을 기다리면 병렬처리가 안되고 병렬처리를 하면 return값을 얻을 수 없음
-![미니쉘 구조(미완)](https://user-images.githubusercontent.com/57505385/201668174-09f7bc6a-5a5c-4518-8293-6ac8b7e196cb.png)
+![123](https://user-images.githubusercontent.com/57505385/201672306-411f41b1-408c-49a1-a590-c7b6efd883fd.png)
 
 ### 해결
 executer를 생성하는 자식프로세서를 하나 더 둠으로써 minishell은 해당 명령어를 실행할 자식프로세서들만을 생성하고 return값이 다 오기를 대기하고, 자식프로세서들은 명령어를 실제 처리할 자식프로세서를 생성하여 return값을 돌려주는 방식의 구조로 변경
