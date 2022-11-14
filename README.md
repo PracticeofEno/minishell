@@ -48,6 +48,5 @@
 ![미니쉘 구조(미완)](https://user-images.githubusercontent.com/57505385/201668174-09f7bc6a-5a5c-4518-8293-6ac8b7e196cb.png)
 
 ### 해결
-![미니쉘 구조(완)](https://user-images.githubusercontent.com/57505385/201668170-f172611c-3fab-4440-a368-acbadd24fcdd.png)
 executer를 생성하는 자식프로세서를 하나 더 둠으로써 minishell은 해당 명령어를 실행할 자식프로세서들만을 생성하고 return값이 다 오기를 대기하고, 자식프로세서들은 명령어를 실제 처리할 자식프로세서를 생성하여 return값을 돌려주는 방식의 구조로 변경
-
+![미니쉘 구조(완)](https://user-images.githubusercontent.com/57505385/201668170-f172611c-3fab-4440-a368-acbadd24fcdd.png)
